@@ -9,7 +9,7 @@ const cancelButton = document.querySelector(".people-add__cancel");
 const addForm = document.querySelector(".people-add");
 const htmlListElement = document.querySelector(".people__list");
 const personaContentElement = document.querySelector(".people__content");
-const enviarForm = document.querySelector("form");
+const form = document.querySelector("form");
 
 
 
@@ -184,10 +184,10 @@ Clona tu propio API: https://mockapi.io/clone/5d2cd8678c90070014972943
 function newDataUser(event){
   event.preventDefault();
   const formData = {
-    "fullName": `${enviarForm.elements[0].value}`,
-    "email": `${enviarForm.elements[1].value}`,
-    "phoneNumber": `${enviarForm.elements[2].value}`,
-    "city": `${enviarForm.elements[3].value}`
+    "fullName": `${form.elements[0].value}`,
+    "email": `${form.elements[1].value}`,
+    "phoneNumber": `${form.elements[2].value}`,
+    "city": `${form.elements[3].value}`
   }
   newUser(formData)
 }
@@ -207,5 +207,7 @@ function newUser (formData) {
       console.error(err);
     });
     alert('Se agrego exitosamente');
+    form.reset()
 }
-enviarForm.addEventListener("submit", newDataUser);
+
+form.addEventListener("submit", newDataUser);
