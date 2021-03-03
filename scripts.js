@@ -202,10 +202,6 @@ function newUser (formData) {
     .then((response) => response.json())
     .then((data)=> {
       htmlListElement.innerHTML += agregarUsuarios(data);
-      enviarForm.elements[0].value = "";
-      enviarForm.elements[1].value = "";
-      enviarForm.elements[2].value = "";
-      enviarForm.elements[3].value = "";
     })
     .catch((err) => {
       console.error(err);
